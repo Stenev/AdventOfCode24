@@ -24,12 +24,17 @@ public class AdventOfCode24 {
         Collections.sort(list2);
 
         int result = 0;
-        for (int i=0; i<list1.size(); i++) {
-            result += Math.abs(list1.get(i) - list2.get(i));
+        for (int l1 : list1) {
+            int frequency = 0;
+            for (int l2 : list2) {
+                if (l1 == l2) {
+                    frequency++;
+                }
+            }
+            result += l1 * frequency;
         }
 
         System.out.println(result);
-
     }
 
 
